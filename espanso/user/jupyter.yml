@@ -1,0 +1,9 @@
+name: jupyter
+parent: default
+
+matches:
+  - trigger: ":autore"
+    replace: |
+        %load_ext autoreload
+        %autoreload 2
+      

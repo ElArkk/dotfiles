@@ -1,0 +1,39 @@
+alias ..='cd ..'
+
+# Only alias ls to exa if exa is installed.
+command -v exa >/dev/null 2>&1 && alias ls='exa --long --git -a --header --group' && alias tree='exa --tree --level=2 --long -a --header --git'
+
+alias l='ls'
+alias rebash="source $HOME/.bashrc"
+alias bashedit="vim $HOME/.bashrc"
+alias rezsh="source $HOME/.zshrc"
+alias zshedit="vim $HOME/.zshrc"
+
+alias killjobs="kill -9 `jobs -ps`"
+alias countfiles="find . ! -name . -prune -print | grep -c /"
+
+# Git Aliases
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gd="git diff"
+alias gm="git merge"
+alias gpl="git pull"
+alias gps="git push"
+alias gl="git log"
+alias gk="git checkout"
+alias gb="git branch"
+alias gr="git remote"
+alias gf="git fetch"
+
+# tmux
+alias ta="tmux a -t"
+alias tn="tmux new -s"
+alias tl="tmux ls"
+
+# Command Line Tools Aliases
+alias pico="nano"
+alias diff="diff-so-fancy"
+#alias cat="bat"
+alias diff="diff-so-fancy"
+alias find="fd"

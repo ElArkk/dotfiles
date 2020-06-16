@@ -1,0 +1,7 @@
+name: shell
+parent: default
+
+matches:
+  - trigger: ":progex"
+    replace: command -v PROGRAM >/dev/null 2>&1
+      
