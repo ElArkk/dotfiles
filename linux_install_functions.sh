@@ -63,9 +63,13 @@ function install_conky {
 }
 
 function install_espanso {
-    wget https://github.com/federico-terzi/espanso/releases/latest/download/espanso-debian-amd64.deb
-    sudo apt install ./espanso-debian-amd64.deb
-    rm espanso-debian-amd64.deb
-    espanso start
-    cp -r espanso/user/. $HOME/.config/espanso/user
+    if ! command -v espanso >/dev/null 2>&1 ; then
+        wget https://github.com/federico-terzi/espanso/releases/latest/download/espanso-debian-amd64.deb
+        sudo apt install ./espanso-debian-amd64.deb
+        rm espanso-debian-amd64.deb
+        espanso start
+        cp -r espanso/user/. $HOME/.config/espanso/user
+    else
+        echo "espanso already installed"
+    fi
 }
