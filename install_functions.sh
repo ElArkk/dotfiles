@@ -35,6 +35,7 @@ function install_anaconda {
     else
         echo "anaconda already installed"
     fi
+    conda init zsh
     # Install jupyter lab
     conda install --yes jupyterlab ipykernel
 
