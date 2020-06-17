@@ -109,7 +109,7 @@ export VISUAL=/usr/bin/vim
 
 ### USER SETTINGS
 
-[ -f $HOME/dotfiles/.proxy ] && source $HOME/.dotfiles/.proxy
+[ -f $HOME/dotfiles/.proxy ] && source $HOME/dotfiles/.proxy
 source $HOME/dotfiles/.aliases
 source $HOME/dotfiles/conda_auto_env.sh
 
