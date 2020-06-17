@@ -7,8 +7,9 @@ set shiftwidth=4
 set expandtab
 
 " Set up vertical vs block cursor for insert/normal mode
-au InsertEnter * silent execute "!echo -en \<esc>[5 q"
-au InsertLeave * silent execute "!echo -en \<esc>[2 q"
+let &t_SI = "\<esc>[5 q"
+let &t_SR = "\<esc>[5 q"
+let &t_EI = "\<esc>[2 q"
 
 " faster switching between modes
 set ttimeout
