@@ -27,14 +27,16 @@ function install_oh_my_zsh {
 
 function install_anaconda {
     echo "Installing anaconda"
-    command -v conda >/dev/null 2>&1 ||
-    wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O anaconda.sh &&
-    bash anaconda.sh -b -p $HOME/anaconda &&
-    rm anaconda.sh &&
-    export PATH=$HOME/anaconda/bin:$PATH
-    
+    if ! command -v conda >/dev/null 2>&1 ; then
+        wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O anaconda.sh &&
+        bash anaconda.sh -b -p $HOME/anaconda &&
+        rm anaconda.sh &&
+        export PATH=$HOME/anaconda/bin:$PATH
+    else
+        echo "anaconda already installed"
+    fi
     # Install jupyter lab
     conda install --yes jupyterlab ipykernel
 
-    jupyter notebook --generate-config
+    # jupyter notebook --generate-config
 }
