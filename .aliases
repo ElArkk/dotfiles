@@ -32,8 +32,4 @@ alias tn="tmux new -s"
 alias tl="tmux ls"
 
 # Command Line Tools Aliases
-alias pico="nano"
-alias diff="diff-so-fancy"
-#alias cat="bat"
-alias diff="diff-so-fancy"
-alias find="fd"
+alias cat="bat"
