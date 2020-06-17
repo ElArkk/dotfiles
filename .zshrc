@@ -92,6 +92,8 @@ export PATH="$HOME/bin/diff-so-fancy:$PATH"
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -127,3 +129,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# enable vi mode
+bindkey -v
