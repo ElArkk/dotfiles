@@ -9,12 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 export TERM='xterm-256color'
-POWERLEVEL9K_MODE='nerdfont-complete'
-# add context back in to show user@machine
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda dir vcs)
-POWERLEVEL9K_ANACONDA_BACKGROUND='yellow'
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -75,7 +72,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode history-substring-search git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+    vi-mode
+    history-substring-search
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    you-should-use
+    command-not-found
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,5 +134,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# This is necessary because conda does not activate base env
+# when absolute path is replaced by $HOME in conda init
+conda activate base
+
 # enable vi mode
 # bindkey -v
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
