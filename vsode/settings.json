@@ -1,6 +1,6 @@
 {
     "terminal.integrated.shell.osx": "/bin/zsh",
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
     "python.linting.pylintUseMinimalCheckers": false,
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
